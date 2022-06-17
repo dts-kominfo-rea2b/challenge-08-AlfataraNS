@@ -62,7 +62,7 @@ header {
 }
 
 #todo-input {
-    width: 90%;
+    width: 80%;
     background-color: rgb(226, 210, 197);
     padding: 1.5% 4%;
     font-family: "Reenie Beanie", cursive;
@@ -93,6 +93,17 @@ header {
     border: 1px solid #48342d;
     border-radius: 20px;
     padding: 4% 3%;
+}
+
+#clear {
+    position: relative;
+    left: 75%;
+    margin-bottom: 3%;    
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #48342d;
+    padding: 2%;
+    padding-top: 0;
 }
 
 #todo-output {
