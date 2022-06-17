@@ -23,12 +23,13 @@
           <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
           <input type="text" placeholder="I need to ..." id="todo-input">
           <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
-          <button id="todo-submit">submit</button>
+          <button id="todo-submit">Submit</button>
         </section>
   
         <!-- Section output -->
         <section class="output">
           <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
+            <button id="clear">CLEAR LIST</button>
             <ul id="todo-output"></ul>
         </section>
         <h3>I have to do all of this !</h3>
@@ -42,7 +43,7 @@
       const input = document.getElementById('todo-input');
       const output = document.getElementById('todo-output');
 
-      let toDoInput: '';
+      let toDoInput = '';
 
       // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
       // Fungsi yang digunakan untuk menambahkan tulisan
@@ -51,7 +52,7 @@
         console.log(toDoList)
         if (toDoList.target.type === "submit" || toDoList.key === "Enter") {
           const listLi = document.createElement('li');
-          listLi.appendChild(document.createTextNode(dataInput));
+          listLi.appendChild(document.createTextNode(toDoInput));
           document.querySelector('ul').appendChild(listLi);
           input.value = '';
           toDoInput = '';
@@ -62,6 +63,12 @@
         toDoInput = valueKey.target.value;       
       }
 
+      function fnClear(clearList) {
+        while (output.hasChildNodes()) {
+          output.removeChild(output.firstChild);
+        }
+      }
+
       // TODO: register event onclick / addEventListener untuk button
       // akan menjalankan fungsi fnClickHandler
       button.addEventListener('click', fnClickHandler);
@@ -70,6 +77,9 @@
       // TODO: register event onkeypress / addEventListener untuk input
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
       input.addEventListener('keyup', fnValueChange);
+
+      //clearList btnClick
+      clear.addEventListener('click', fnClear);
     </script>
   </body>
 </html>
